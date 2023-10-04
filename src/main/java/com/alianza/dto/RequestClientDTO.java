@@ -1,40 +1,24 @@
 package com.alianza.dto;
 
-import java.util.Date;
+public class RequestClientDTO {
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-public class ResponseClientDTO {
-
-	private Long id;
 	private String sharedKey;
 	private String businessId;
 	private String email;
 	private String phone;
-	
-	@JsonFormat(pattern="dd-MM-yyyy", timezone = "America/Bogota")
-	private Date dataAdded;
+	private String dataAdded;
 
-	public ResponseClientDTO() {
+	public RequestClientDTO() {
 		// Constructor empty
 	}
 
-	public ResponseClientDTO(Long id, String sharedKey, String businessId, String email, String phone,
-			Date dataAdded) {
-		this.id = id;
+	public RequestClientDTO(Long id, String sharedKey, String businessId, String email, String phone,
+			String dataAdded) {
 		this.sharedKey = sharedKey;
 		this.businessId = businessId;
 		this.email = email;
 		this.phone = phone;
 		this.dataAdded = dataAdded;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getSharedKey() {
@@ -69,11 +53,11 @@ public class ResponseClientDTO {
 		this.phone = phone;
 	}
 
-	public Date getDataAdded() {
+	public String getDataAdded() {
 		return dataAdded;
 	}
 
-	public void setDataAdded(Date dataAdded) {
+	public void setDataAdded(String dataAdded) {
 		this.dataAdded = dataAdded;
 	}
 
